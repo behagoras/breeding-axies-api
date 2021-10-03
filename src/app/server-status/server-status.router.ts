@@ -1,23 +1,15 @@
 import { Router } from 'express';
-import { SERVER_STATUS_ENDPOINT } from '../../constants/endpoint';
-import { getRoutes } from './server.status.service';
+import { getFormattedRoutes, getRoutes } from './server.status.service';
 
 export const router: Router = Router();
+export const SERVER_STATUS_ENDPOINT = "/";
 
 // getStatus
-router.get(SERVER_STATUS_ENDPOINT + "/", (req, res) => {
-  res.status(200).send({
-    "status": "server is running"
-  });
-});
-
-// getRoutes
-router.get(SERVER_STATUS_ENDPOINT + "/routes", (req, res) => {
-  const routes = getRoutes();
-  res.status(200).send({
+router.get(`${SERVER_STATUS_ENDPOINT}`, (_, res) => {
+  const routes = getFormattedRoutes();
+  res.status(200).json({
+    status: "server is running",
     numberOfRoutes: routes.length,
-    routes: routes
+    routes,
   });
 });
-
-
