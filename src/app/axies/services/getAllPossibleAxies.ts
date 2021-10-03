@@ -1,4 +1,4 @@
-import { GetAxiesRequest } from "../types/getAxiesRequest.types";
+import { GetAxiesRequest } from "../../../types/getAxiesRequest.types";
 import getAxies from "./getAxies";
 
 const getAllPossibleAxies: GetAxiesRequest = async (include, parts, omit) => {

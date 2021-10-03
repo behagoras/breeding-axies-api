@@ -1,12 +1,12 @@
 /* eslint-disable no-loop-func */
 import { AxieGene } from 'agp-npm/dist/axie-gene';
 import { PartGene } from 'agp-npm/dist/models/part';
-import { Axie, BreakdownPurity, PlainAxie, PlainAxieResult } from '../types/axies.types';
-import { calculateBreakdownPurity } from '../utils/calculatePurity';
+import { Axie, BreakdownPurity, PlainAxie, PlainAxieResult } from '../../../types/axies.types';
+import { calculateBreakdownPurity } from '../../../utils/calculatePurity';
 import axios from 'axios';
 import buildQuery from './buildQuery';
-import getParts from '../utils/getParts';
-import { GetAxiesRequest, PartsAndSpecies } from '../types/getAxiesRequest.types';
+import getParts from '../../../utils/getParts';
+import { GetAxiesRequest, PartsAndSpecies } from '../../../types/getAxiesRequest.types';
 
 const endpoint = 'https://axieinfinity.com/graphql-server-v2/graphql';
 const breedCount = [0];
